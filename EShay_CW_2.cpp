@@ -17,12 +17,7 @@ const double COUNTRY_SALES_TAX = 0.02;
 
 int main() {
     //Part 1
-    string name = "Ethan Shay";
-    string address = "10249 Nolan Dr MD, 20850";
-    unsigned int phoneNum = 3015325821;
-    string major = "Computer Science";
-    
-    cout << name << "\n" << address << "\n" << phoneNum << "\n" << major;
+    cout << "Ethan Shay" << "\n" << "10249 Nolan Dr MD, 20850" << "\n" << 3015325821 << "\n" << "Computer Science";
 
     //Part 2
     string movieName = "Interstellar";
