@@ -42,12 +42,12 @@ int main() {
     cout << "Hello, welcome to Montgomery College! My name is " << ROBOT_NAME << ". May I have your name? \n";
     getline(cin, name);
     cout << "Nice to have you with us today, " << name << "!";
-    cout << "\nLet me impress you with a small game\n";
-    cout << "Give me the name of an important person or pet to you";
+    cout << "\nLet me impress you with a small game.\n";
+    cout << "Give me the age of an important person or pet to you.";
     cout << "\nPlease give me only a number: \n";
     cin >> num;
 
-    cout << "\nYou have entered: " << num << "." << endl;
+    cout << "\nYou have entered " << num << "." << endl;
     cout << " If this is for a person, the age can be expressed as: \n";
     cout << " " << num * YEARS << " years" << endl;
     cout << " or " << (num * MONTHS) << " months\n";
@@ -55,10 +55,10 @@ int main() {
     cout << " or about " << (num * HOURS) << " hours\n";
     cout << " or about " << (num * MINUTES) << " minutes\n";
     cout << " or about " << (num * SECONDS) << " seconds.\n";
-    cout << " If this is for a dog, it is about " << (num * DOG_YEARS) << " years old in human age\n";
-    cout << " If this is for a goldfish, it is about " << (num * GOLDFISH_YEARS) << " years old in human age\n";
+    cout << " If this is for a dog, it is " << (num * DOG_YEARS) << " years old in human age\n";
+    cout << " If this is for a goldfish, it is " << (num * GOLDFISH_YEARS) << " years old in human age\n";
 
-    cout << "\nLets play another game, " << name << ". Give me a whole number.\n";
+    cout << "\nLets play another game, " << name << ". Give me a another whole number.\n";
     cin >> wholeNum;
 
     cout << "Very well. Give me another whole number.\n";
@@ -67,9 +67,9 @@ int main() {
     //This line allows for a decimal place on non decimal numbers.
     cout << fixed << setprecision(1);
 
-    cout << "Using the operator '+' in C++, the result of " << wholeNum << " + " << wholeNum2 << " is " << (wholeNum + wholeNum2) << endl;
+    cout << "Using the operator '+' in C++, the result of " << wholeNum << " + " << wholeNum2 << " is " << (wholeNum + wholeNum2) << "." << endl;
     cout << "Using the operator '/' in C++, the result of " << wholeNum << " / " << wholeNum2 << " is " << (wholeNum / wholeNum2) << endl;
-    cout << "however, the result of " << (double)wholeNum << " / " << (double)wholeNum2 << " is about " << (static_cast<double>(wholeNum) / wholeNum2) << endl;
+    cout << "however, the result of " << (double)wholeNum << " / " << (double)wholeNum2 << " is about " << (static_cast<double>(wholeNum) / wholeNum2) << "." << endl;
 
     cout << "\nThank you for testing my program!!\n";
     cout << "PROGRAMMER: " << MY_NAME << endl;
