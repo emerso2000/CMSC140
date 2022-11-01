@@ -1,3 +1,16 @@
+/*
+ * Class: CMSC140 CRN XXXX XXXX
+ * Instructor: Dr. Eivazi
+ * Project 3 
+ * Description: write a program that calculates the occupancy rate
+   and the total hotel income for one night and displays this 
+   information as well as some other information described below. 
+ * Due Date: 10/31/2022
+ * I pledge that I have completed the programming assignment independently.
+   I have not copied the code from a student or any source.
+   I have not given my code to any student.
+   Print your Full Name here: Ethan Shay
+               */
 #include <iostream>
 #include <iomanip>
 using namespace std;
