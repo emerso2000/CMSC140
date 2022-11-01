@@ -53,73 +53,15 @@ int main() {
     cin >> hotelLocation;
     cout << "Enter the total number of floors of this hotel: ";
     cin >> numFloors;
-
-    while (numFloors < MIN_FLOORS || numFloors > MAX_FLOORS) {
-        cout << "\nNumber of floors should be between 1 and 5!! Please try again";
-        cout << "\nEnter the total number of floors of the hotel: ";
-        cin >> numFloors;
-    }
-
-    for (i = 1; i <= numFloors; i++) {
-        cout << "\nEnter total number of rooms in the " << i << "st Floor: ";
-        cin >> numRooms;
-        totalNumRooms += numRooms;
-
-        while (numRooms < MIN_ROOMS || numRooms > MAX_ROOMS) {
-            cout << "\nNumber of rooms should be between 1 and 30!! Please try again.";
-            cout << "\nEnter the total number of rooms in the " << i << "st Floor: ";
-            cin >> numRooms;
+    do {
+        while (numFloors < MIN_FLOORS || numFloors > MAX_FLOORS) {
+            cout << "\nNumber of floors should be between 1 and 5!! Please try again";
+            cout << "\nEnter the total number of floors of the hotel: ";
+            cin >> numFloors;
         }
 
-        if (minFloor > numRooms) {
-            minFloor = numRooms;
-            min = i;
-        }
-
-        cout << "How many SINGLE rooms are occupied in the " << i << "th floor: ";
-        cin >> singleRooms;
-        totalSingleRooms += singleRooms;
-
-        while (singleRooms < SPECIFIC_MIN_ROOM || singleRooms > numRooms) {
-            cout << "Number of rooms should be greater than 0!! Please try again.";
-            cout << "\nHow many SINGLE rooms are occupied in the " << i << "th floor: ";
-            cin >> singleRooms;
-        }
-
-        cout << "How many DOUBLE rooms are occupied in the " << i << "th floor: ";
-        cin >> doubleRooms;
-        totalDoubleRooms += doubleRooms;
-
-        while (doubleRooms < SPECIFIC_MIN_ROOM || doubleRooms > numRooms) {
-            cout << "Number of rooms should be greater than 0!! Please try again.";
-            cout << "\nHow many DOUBLE rooms are occupied in the " << i << "th floor: ";
-            cin >> doubleRooms;
-        }
-
-        cout << "How many KING rooms are occupied in the " << i << "th floor: ";
-        cin >> kingRooms;
-        totalKingRooms += kingRooms;
-
-        while (kingRooms < SPECIFIC_MIN_ROOM || kingRooms > numRooms) {
-            cout << "Number of rooms should be greater than 0!! Please try again.";
-            cout << "\nHow many KING rooms are occupied in the " << i << "th floor: ";
-            cin >> kingRooms;
-        }
-
-        cout << "How many SUITE rooms are occupied in the " << i << "th floor: ";
-        cin >> suiteRooms;
-        totalSuiteRooms += suiteRooms;
-
-        while (suiteRooms < SPECIFIC_MIN_ROOM || suiteRooms > numRooms) {
-            cout << "Number of rooms should be greater than 0!! Please try again.";
-            cout << "\nHow many SUITE rooms are occupied in the " << i << "th floor: ";
-            cin >> suiteRooms;
-        }
-
-        while((singleRooms + doubleRooms + kingRooms + suiteRooms) > numRooms) {
-            cout << "Total number of occupied rooms exceeds the total number of rooms on this floor. Please try again!";
-
-            cout << "\n\nEnter total number of rooms in the " << i << "st Floor: ";
+        for (i = 1; i <= numFloors; i++) {
+            cout << "\nEnter total number of rooms in the " << i << "st Floor: ";
             cin >> numRooms;
             totalNumRooms += numRooms;
 
@@ -174,8 +116,9 @@ int main() {
                 cin >> suiteRooms;
             }
         }
-    }
-
+    }while((singleRooms + doubleRooms + kingRooms + suiteRooms) > numRooms);
+    cout << "Total number of occupied rooms exceeds the total number of rooms on this floor. Please try again!!";
+    
     hotelIncome = ((totalSingleRooms * SINGLE_ROOM_RATE) + (totalDoubleRooms * DOUBLE_ROOM_RATE) + (totalKingRooms * KING_ROOM_RATE) + (totalSuiteRooms * SUITE_ROOM_RATE)) / 1.00;
     totalNumOccupiedRooms = (totalSingleRooms + totalDoubleRooms + totalKingRooms + totalSuiteRooms);
     totalNumUnoccupiedRooms = (totalNumRooms - totalNumOccupiedRooms);
@@ -202,5 +145,4 @@ int main() {
     cout << CLASS << " Common Project " << PROJECT_NUMBER;
 
     return 0;
-
 }
